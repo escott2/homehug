@@ -1,13 +1,14 @@
 import "./App.css";
-import { Home, Palette, AppLayout } from "./pages";
+import { Home, Palette, AppLayout, ErrorPage } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <Home /> },
+      { index: true, element: <Home /> },
       { path: "/palette", element: <Palette /> },
     ],
   },
